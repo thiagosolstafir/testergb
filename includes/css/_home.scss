@@ -1,0 +1,220 @@
+@import "config";
+@import "core/mixin";
+
+body {
+  background: url("../imgs/bg.jpg") center center no-repeat;
+}
+
+#topo {
+  @include mp-default($m: 30px 0 0 0);
+
+
+  .logo {
+    @include mp-default(206px, 91px);
+    background: url("../imgs/logo.png");
+  }
+
+  .container-menu {
+    @include mp-default(auto, $m: 15px 0 0 0, $f: right);
+    @include mp-flex(flex-end) {
+      align-items: flex-end;
+      flex-direction: column;
+    }
+
+    .telefone {
+      @include mp-default(auto);
+      @include mp-flex();
+
+      i {
+        @include mp-default(17px, 17px, 0 5px 0 0);
+        background: url("../imgs/telefone.png") no-repeat;
+      }
+
+      small {
+        color: $ct;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      span {
+        font-size: 18px;
+        color: $ct;
+      }
+    }
+
+    ul {
+      @include mp-default(auto, $m: 25px 0 0 0);
+      @include mp-flex();
+
+      .linha_topo {
+
+        position: absolute;
+        left: 482px;
+        top: 125px;
+        width: 956px;
+        height: 1px;
+        z-index: 4;
+      }
+
+      li {
+        @include mp-default(auto);
+
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+
+        a {
+          font-size: 16px;
+          color: #5f5d5a;
+
+          &:hover {
+            color: $c;
+          }
+        }
+      }
+    }
+  }
+}
+
+#galeria {
+  @include mp-default($m: 35px 0 0 0);
+
+  .grid {
+    @include mp-default($m: 0 0 30px 0);
+    display: grid;
+    grid-gap: 30px;
+    grid-row-gap: 40px;
+    grid-template-columns: repeat(5, 1fr);
+
+    a {
+      @include mp-default();
+
+      &:hover {
+        figure {
+          img {
+            @include mp-scale(1.1);
+          }
+        }
+
+        span {
+          color: $c;
+        }
+      }
+
+      figure {
+        @include mp-default();
+        overflow: hidden;
+        @include mp-radius(9px);
+
+        img {
+          @include mp-default();
+          max-width: 100%;
+          @include mp-animacao();
+        }
+      }
+
+      span {
+        @include mp-default($m: 5px 0 0 0);
+        font-size: 15px;
+        font-weight: 700;
+        color: #777575;
+        @include mp-animacao();
+      }
+    }
+  }
+}
+
+#rodape {
+  @include mp-default($m: 25px 0 0 0);
+
+  .responsive {
+    @include mp-flex(space-between);
+  }
+
+  .container {
+    @include mp-calc(width, "100% - 230px");
+    float: left;
+    @include mp-flex(flex-start);
+
+    figure {
+      @include mp-default(140px);
+    }
+
+    .content {
+      @include mp-calc(width, "100% - 140px");
+      padding-left: 15px;
+
+      span {
+        @include mp-default($m: 0 0 5px 0);
+        color: #000;
+        font-size: 22px;
+      }
+
+      p {
+        @include mp-default();
+        color: #676767;
+        font-size: 13px;
+        line-height: 15px;
+        font-family: Georgia, serif;
+      }
+    }
+  }
+
+  .social {
+    @include mp-default(auto);
+    @include mp-flex(flex-start) {
+      flex-direction: column;
+    }
+
+    > span {
+      @include mp-default($m: 0 0 10px 0);
+      color: #000;
+      font-size: 18px;
+    }
+
+    a {
+      @include mp-default();
+      @include mp-flex(flex-start);
+      color: #000;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+#copy {
+  @include mp-default($m: 20px 0 0 0);
+  position: relative;
+  padding: 15px 0 10px;
+
+  &:before {
+    content: '';
+    @include mp-default($h: 13px);
+    background: url("../imgs/divider-rodape.png") center center no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .responsive {
+    @include mp-flex(space-between);
+  }
+
+  span {
+    @include mp-default();
+    font-family: Georgia, serif;
+    color: #626262;
+    font-size: 12px;
+  }
+
+  .rgb{
+    @include mp-default(116px, 12px);
+    background: url("../imgs/rgb.png") no-repeat;
+  }
+}

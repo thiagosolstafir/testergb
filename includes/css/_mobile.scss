@@ -1,0 +1,80 @@
+@import "config";
+@import "core/mixin";
+
+@media (max-width: 1360px) {
+  .area-navs {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .menu-btn{
+    display: flex;
+    opacity: 1;
+  }
+  .logo-mobile{
+    display: block;
+  }
+
+  #galeria{
+    margin-top: 60px;
+  }
+
+  .title-bar-right{
+    img{
+      max-height: 35px;
+      float: right;
+    }
+  }
+
+  #topo {
+    display: none;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+
+    @include mp-placeholder {
+      font-size: 14px;
+    }
+  }
+
+  #container-site {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 968px) {
+  #rodape .container{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  #rodape .container .content{
+    @include mp-default($m: 10px 0 0 0);
+    padding:0;
+  }
+  #rodape .responsive{
+    flex-direction: column;
+  }
+  #rodape .container{
+    @include mp-default();
+  }
+
+  #rodape .social{
+    @include mp-default($m: 30px 0 0 0);
+  }
+}
+
+@media (max-width: 768px) {
+  #galeria .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 468px) {
+}

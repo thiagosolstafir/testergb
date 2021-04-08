@@ -1,0 +1,11 @@
+//core
+@import "config";
+@import "core/init";
+@import "../lib/lightgallery.css";
+
+//pages
+@import "layout";
+@import "home";
+
+// mobile
+@import "mobile";
